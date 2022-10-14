@@ -1,3 +1,23 @@
+## on peut mettre des commentaires
+
+## NOTE01
+## syntaxe générale:
+## il faut après la 1° ligne, laisser
+## au - 1 espace car yaml comprend alors que les
+## valeurs st inclues ds 1 tableau
+
+## NOTE02
+## pr pvoir attribuer 1 valeur validée par yaml
+## à 1 variable, il faut aussi laisser
+## au - 1 espace apres la variable
+
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+## section attribuée à la Route about
+## definie ds le CoreController
+## (projet_test01/src/Controller/CoreController.php)
+about:
+ path: /about
+ controller: App\Controller\CoreController::about
