@@ -1,0 +1,42 @@
+
+README
+
+Symfony 6 php framework
+test01
+
+repo name: php_projet01_test01
+
+created
+3 controller files
+- src/Controller/CoreController.php
+	content:
+	2 static controllers (methods) with their Route
+		first Route: inside the file (go to /)
+		second Route: inside .yaml file (go to
+/about)
+(see config/routes.yaml to know how to define Routes into
+.yaml file))
+
+- src/Controller/EventController.php
+	content:
+	2 dynamic controllers (methods) with their Route
+		first controller: 1 Int parameter (go to
+/events/{id})
+		second controller: 1 String parameter (go to
+/events/{category})
+
+- src/Controller/LieuxController.php
+	1 dynamic controller (metho) with its Route
+		controller: 2 String parameters (go to
+/pays/{pays}/ville/{ville}
+
+Routes:
+            need to type into your adress bar browser
+            https://localhost:8000 (cette page)
+            https://localhost:8000/events
+            https://localhost:8000/1String
+            https://localhost:8000/events/1 (ou 2, ou 3, ou n'importe)
+            https://localhost:8000/
+            https://localhost:8000/pays/1String/ville/1String
+            https://localhost:8000/about
+
