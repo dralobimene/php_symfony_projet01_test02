@@ -1,0 +1,70 @@
+{# templates/event/show.html.twig #}
+Affichage de l'événement {{ event_id }} dans une vue
+twig...
+<br>
+1 nvel objet de type Response ms qui prend 1 parametre
+<br>
+que pr le moment on tape directement ds la
+<br>
+barre d'adresse
+<br>
+tjs avec du HTML
+<br>
+
+<h2>
+il y a aussi 1 template twig
+<br>
+ds templates/event/show.html.twig
+<br>
+avec CE texte qu'on est en train de lire.
+</h2>
+<br>
+
+<h2>
+la liaison entre le fichier controller (et surtout la Route
+et le controller qui y st implémentés) se fait grace a 1
+parametre passé ds la methode render() du controller show().
+<br>
+Ce parametre est 1 tableau associatif.
+<br>
+la clé (ici event_id) se retrouve ds le template twig
+(voir
+/media/sambano/home_HDD_EXTERNE/Images/PHP_symfony/21...)
+</h2>
+
+<br>
+adresse: localhost:8000/
+<br>
+Objectif:
+<br>
+Afficher 1 texte dynamique grace a 1 parametre ds la methode
+<br>
+show(\$id) ou list(\$category)
+<br>
+fichier: projet_test01/src/Controller/EventController.php
+<br>
+Resultat affiché:
+<br>
+texte statique suivi du parametre \$id qui a comme valeur:
+<br>
+
+<bold>
+{{event_id}}
+</bold>
+
+<br>
+(syntaxe qui necessite des {})
+<br>
+on est d'accord sur le fait que la valeur du parametre
+<br>
+est = à la valeur du parametre ds la barre d'adresse
+<br>
+(voir la def de la Route ds le fichier)
+<br>
+dc, en fait il suffit d'arriver DEPUIS 1 page qui definit
+<br>
+des parametres par les methodes GET, POST ou PUT.
+<br>
+A noter que la Route est definie ds ce fichier, il n'y a pas de
+<br>
+.yaml

@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * on definit le controller show pr qu'il ne passe le barrage
  * que si son parametre est un int, sinon c'est le controller
  * list qui sera appelé (dc l'adresse passera ds ts les cas)
- * 
+ *
  * l'operat° se deroule dc ds la definition de la Route
  * du controller show(), qui prend un nvel attribut: requirements
  * qui definit 1 pattern REGEX pr le parametre id
@@ -33,6 +33,11 @@ use Symfony\Component\Routing\Annotation\Route;
  * En effet, show() ne serait js appelé puisque list() n'a aucun
  * attribut requirements et la Route de list() passera qque soit
  * son type
+ *
+ * CODE DU CONTROLLER SHOW() MODIFIÉ:
+ * il n'affiche plus de html, ms il est maintenant
+ * associé à son template qui contient le html
+ * template a template/event/show.html.twig
  */
 class EventController extends AbstractController {
     
@@ -49,45 +54,8 @@ class EventController extends AbstractController {
      */
     //------------------------------------------------
     
-    public function show($id): Response {
-        return new Response("
-            1 nvel objet de type Response ms qui prend 1 parametre
-            <br>
-            que pr le moment on tape directement ds la
-            <br>
-            barre d'adresse
-            <br>
-            tjs avec du HTML
-            <br>
-            adresse: localhost:8000/
-            <br>
-            Objectif:
-            <br>
-            Afficher 1 texte dynamique grace a 1 parametre ds la methode
-            <br>
-            show(\$id) ou list(\$category)
-            <br>
-            fichier: projet_test01/src/Controller/EventController.php
-            <br>
-            Resultat affiché:
-            <br>
-            Texte statique suivi du parametre \$id qui a comme valeur:
-            {$id} (syntaxe qui necessite des {})
-            <br>
-            on est d'accord sur le fait que la valeur du parametre
-            <br>
-            est = à la valeur du parametre ds la barre d'adresse
-            <br>
-            (voir la def de la Route ds le fichier)
-            <br>
-            dc, en fait il suffit d'arriver DEPUIS 1 page qui definit
-            <br>
-            des parametres par les methodes GET, POST ou PUT.
-            <br>
-            A noter que la Route est definie ds ce fichier, il n'y a pas de
-            <br>
-            .yaml
-            ");
+	public function show($id): Response {
+		return $this->render('event/show.html.twig', ['event_id'=> $id]);
     }
     
     /**
@@ -106,7 +74,7 @@ class EventController extends AbstractController {
                 $htmlMessage .= "je ne connais pas la difference pr le moment";
         } else {
             $htmlMessage .= "ds la categorie: {$category}.";
-        }
+	}
         
         return new Response($htmlMessage);
         

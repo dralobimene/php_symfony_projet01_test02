@@ -28,43 +28,21 @@ class CoreController extends AbstractController {
     
     // methode index qui retourne un objet de type Response
     // c'est 1 controller
-    public function index(): Response {
-        return new Response("
-            Voici encore 1x la nvelle Response
-            <br>
-            ms avec du HTML
-            <br>
-            adresse: localhost:8000
-            <br>
-            c'est la methode (ou controller)
-            <br>
-            methodes: index()
-            <br>
-            fichier: projet_test01/src/Controller/CoreController.php
-            <br>
-            On peut taper differentes adresses ds la barre d'adresses
-            <br>
-            localhost:8000 (cette page)
-            <br>
-            https://localhost:8000/events
-            <br>
-            https://localhost:8000/1String
-            <br>
-            https://localhost:8000/events/1 (ou 2, ou 3, ou n'importe)
-            <br>
-            https://localhost:8000/
-            <br>
-            https://localhost:8000/pays/1String/ville/1String
-            <br>
-            https://localhost:8000/about
-            ");
-    }
+	public function index(): Response {
+
+		// Nouveau code pr faire le lien avec le fichier
+		// vue du dossier templates/core/index.html.twig
+		// affiche le texte entré ds le template
+		// twig,
+		// ici, un texte en dur, rien de dynamique
+		return $this -> render('core/index.html.twig');
+	}
     
     // c'est aussi 1 controller
     // NOTE:
     // fonctionne sans definition de Route???
     // peut etre car ce st des Route statiques
-    public function about() {
+	public function about() {
         return new Response("
             Voici la Response about pr la page
             <br>

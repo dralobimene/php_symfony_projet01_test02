@@ -1,0 +1,10 @@
+controller	README	/^	1 dynamic controller (metho) with its Route$/
+controllers	README	/^	2 static controllers (methods) with their Route$/
+false	composer.json	95
+false	composer.lock	9727
+true	composer.json	5
+true	composer.json	49
+true	composer.json	50
+true	composer.json	53
+true	composer.lock	9726
+version	phpunit.xml.dist	1
